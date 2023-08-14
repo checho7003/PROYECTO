@@ -104,3 +104,33 @@ h1{
     font-size: 50px;
     font-family: 'Anton', sans-serif;
 }
+
+/*Formulario de acceso y registro */
+.color1{
+    color: rgb(0, 0, 0);
+    
+}
+
+.box {
+    height: 100%;
+    background: linear-gradient(135deg, rgb(93, 20, 240) 23%, rgb(255, 255, 255) 87%); 
+}
+
+.formulario{
+    max-width: 20em;
+    padding: 1.3em;
+    margin: 0 auto;
+    background-color: rgbas(120, 119, 123, 0.3);
+    font-weight: bold;
+    border-radius: 0.5em;
+    box-shadow: inset 1px 1px 22px 4px;
+}
+
+.texto{
+    margin-right: 560px;
+    float: center;
+    color: rgb(0, 0, 0);
+    padding: 50px ;
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Lumanosimo', cursive;
+}

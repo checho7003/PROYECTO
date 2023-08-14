@@ -11,54 +11,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lumanosimo&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="box">
     <!--ENCABEZADO-->
     <header>
         <img class="icon" src="img/dj-png.webp" alt="logo">          
-        <h1>VARIADAS</h1>    
-    <!--Navegador--> 
-    <nav>      
-        <ul class="nav mt-5 ">
-            <li class="nav-item">
-              <a class="nav-link btn" href="index.html">Inicio</a>
-            </li>
-        </ul>   
-    </nav>
+        <h1 class="texto">VARIADAS</h1>    
       </header>    
     
-      <!--Formulario Registro-->
-      <form class="needs-validation" novalidate>
-        <div class="form-group">
-          <div class="col-md-4 mb-4">
-            <label for="validationCustom01">Nombre </label>
-            <input type="text" class="form-control" id="validationCustom01" value="Nombre" required>
-            <div class="valid-feedback">
-              Bien!
-            </div>
-          </div>        
-          <div class="col-md-4 mb-4">
-            <label for="validationCustom02">Apellido</label>
-            <input type="text" class="form-control" id="validationCustom02" value="Apellido" required>
-            <div class="valid-feedback">
-              Bien!
-            </div>
-          </div>
-
-          <div class="form-check ml-3">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-              ¿Acepta todas las condiciones?
-            </label>
-            <div class="invalid-feedback">
-              Debe aceptar antes de enviar.
-            </div>
-          </div>
-        </div>        
-        <button class="btn ml-3" type="submit">Iniciar</button>
-      </form>
-   
-
+      <!--Formulario login-->
+     <section class="container">
+        <div class="row my-5">
+        <div class="col-sm-12 col-md-12 col-lg-12 ">
+            <form action="" method="post" class="formulario" id="miformulario">
+                <h5 class="display-5 text-center my-3 color1">Acceder</h5>
+                <div class="form-group mt-3">
+                    <label for="">Nombre usuario: </label>
+                    <input type="text" placeholder="Digite su nombre" maxlength="20" id="nombre" name="nombre" class="form-control">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Contraseña: </label>
+                    <input type="password" placeholder="Digite su contraseña" maxlength="20" id="contraseña" name="contraseña" class="form-control">
+                </div>
+                <center>
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn text-md-center">Iniciar</button> 
+            </div> 
+        </center>
+        </div> 
+        </div>          
+    </form>
+    </section>  
+ 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>   
+    
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Seleccionar el formulario
+        var formulario = document.getElementById("miformulario");
+
+        formulario.addEventListener("submit", function(event) {
+            // Detener el envío del formulario para manejar la validación manualmente
+            event.preventDefault();
+
+            // Validar los campos
+            var nombreInput = document.getElementById("nombre");
+            var contraseñaInput = document.getElementById("contraseña");
+
+            if (nombreInput.value.trim() === "") {
+                alert("Por favor, ingrese su nombre de usuario.");
+                nombreInput.style.borderColor = "red";
+                return;
+            }else{
+                nombreInput.style.borderColor = "green";
+            }
+
+            if (contraseñaInput.value.trim() === "") {
+                alert("Por favor, ingrese su contraseña.");
+                contraseñaInput.style.borderColor = "green";
+                return;
+            }
+
+            // Si todos los campos están llenos, envía el formulario
+            window.location.href = "index.html";
+        });
+    });
+</script>
